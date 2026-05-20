@@ -2,6 +2,26 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
+## 0.1.5
+
+([Full Changelog](https://github.com/jupyter-ai-contrib/jupyter-ai-acp-client/compare/v0.1.4...21e105d8f26306fd76c99f656997b8113f491901))
+
+### Enhancements made
+
+- Show structured error info for ACP RequestError [#123](https://github.com/jupyter-ai-contrib/jupyter-ai-acp-client/pull/123) ([@dlqqq](https://github.com/dlqqq), [@aws-sssjwang](https://github.com/aws-sssjwang), [@joshuatowner](https://github.com/joshuatowner))
+- fix: resume after auth answers request directly instead of recapping [#122](https://github.com/jupyter-ai-contrib/jupyter-ai-acp-client/pull/122) ([@aws-sssjwang](https://github.com/aws-sssjwang), [@dlqqq](https://github.com/dlqqq), [@joshuatowner](https://github.com/joshuatowner))
+
+### Contributors to this release
+
+The following people contributed discussions, new ideas, code and documentation contributions, and review.
+See [our definition of contributors](https://github-activity.readthedocs.io/en/latest/use/#how-does-this-tool-define-contributions-in-the-reports).
+
+([GitHub contributors page for this release](https://github.com/jupyter-ai-contrib/jupyter-ai-acp-client/graphs/contributors?from=2026-05-19&to=2026-05-20&type=c))
+
+@aws-sssjwang ([activity](https://github.com/search?q=repo%3Ajupyter-ai-contrib%2Fjupyter-ai-acp-client+involves%3Aaws-sssjwang+updated%3A2026-05-19..2026-05-20&type=Issues)) | @dlqqq ([activity](https://github.com/search?q=repo%3Ajupyter-ai-contrib%2Fjupyter-ai-acp-client+involves%3Adlqqq+updated%3A2026-05-19..2026-05-20&type=Issues)) | @joshuatowner ([activity](https://github.com/search?q=repo%3Ajupyter-ai-contrib%2Fjupyter-ai-acp-client+involves%3Ajoshuatowner+updated%3A2026-05-19..2026-05-20&type=Issues))
+
+<!-- <END NEW CHANGELOG ENTRY> -->
+
 ## 0.1.4
 
 ([Full Changelog](https://github.com/jupyter-ai-contrib/jupyter-ai-acp-client/compare/v0.1.3...7e16473d8ad5b74c5f23d617f2bcdbee68ffd3b0))
@@ -25,8 +45,6 @@ See [our definition of contributors](https://github-activity.readthedocs.io/en/l
 ([GitHub contributors page for this release](https://github.com/jupyter-ai-contrib/jupyter-ai-acp-client/graphs/contributors?from=2026-04-21&to=2026-05-19&type=c))
 
 @aws-sssjwang ([activity](https://github.com/search?q=repo%3Ajupyter-ai-contrib%2Fjupyter-ai-acp-client+involves%3Aaws-sssjwang+updated%3A2026-04-21..2026-05-19&type=Issues)) | @dlqqq ([activity](https://github.com/search?q=repo%3Ajupyter-ai-contrib%2Fjupyter-ai-acp-client+involves%3Adlqqq+updated%3A2026-04-21..2026-05-19&type=Issues)) | @joshuatowner ([activity](https://github.com/search?q=repo%3Ajupyter-ai-contrib%2Fjupyter-ai-acp-client+involves%3Ajoshuatowner+updated%3A2026-04-21..2026-05-19&type=Issues)) | @qwertycxz ([activity](https://github.com/search?q=repo%3Ajupyter-ai-contrib%2Fjupyter-ai-acp-client+involves%3Aqwertycxz+updated%3A2026-04-21..2026-05-19&type=Issues)) | @srdas ([activity](https://github.com/search?q=repo%3Ajupyter-ai-contrib%2Fjupyter-ai-acp-client+involves%3Asrdas+updated%3A2026-04-21..2026-05-19&type=Issues))
-
-<!-- <END NEW CHANGELOG ENTRY> -->
 
 ## 0.1.3
 
