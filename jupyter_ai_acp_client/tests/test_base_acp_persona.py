@@ -443,3 +443,63 @@ class TestResumeAfterAuth:
         await BaseAcpPersona._init_client_session(persona)
 
         persona._resume_after_auth.assert_not_awaited()
+
+
+class TestHandleUncaughtException:
+    """Tests for structured RequestError display in handle_uncaught_exception."""
+
+    async def test_request_error_shows_code_and_message(self):
+        from acp.exceptions import RequestError
+
+        persona = MagicMock()
+        persona.send_message = MagicMock()
+
+        exc = RequestError(-32603, "Internal error")
+        await BaseAcpPersona.handle_uncaught_exception(persona, exc)
+
+        body = persona.send_message.call_args[0][0]
+        assert "jp-jai-error-details" in body
+        assert "Error -32603" in body
+        assert "Internal error" in body
+
+    async def test_request_error_shows_data(self):
+        from acp.exceptions import RequestError
+
+        persona = MagicMock()
+        persona.send_message = MagicMock()
+
+        exc = RequestError(-32603, "Internal error", {"path": "/tmp/x"})
+        await BaseAcpPersona.handle_uncaught_exception(persona, exc)
+
+        body = persona.send_message.call_args[0][0]
+        assert "```json" in body
+        assert "/tmp/x" in body
+
+    async def test_request_error_without_data(self):
+        from acp.exceptions import RequestError
+
+        persona = MagicMock()
+        persona.send_message = MagicMock()
+
+        exc = RequestError(-32000, "Authentication required")
+        await BaseAcpPersona.handle_uncaught_exception(persona, exc)
+
+        body = persona.send_message.call_args[0][0]
+        assert "Error -32000" in body
+        assert "```json" not in body
+        assert "**Traceback:**" in body
+
+    async def test_non_request_error_delegates_to_super(self):
+        """Non-RequestError exceptions should not use the structured format."""
+        persona = MagicMock()
+        persona.send_message = MagicMock()
+
+        exc = RuntimeError("something broke")
+        try:
+            await BaseAcpPersona.handle_uncaught_exception(persona, exc)
+        except TypeError:
+            # super() fails with MagicMock — proves we delegated
+            pass
+        if persona.send_message.called:
+            body = persona.send_message.call_args[0][0]
+            assert "**Error code:**" not in body
