@@ -90,12 +90,6 @@ class KiloAcpPersona(BaseAcpPersona):
     async def before_agent_subprocess(self) -> None:
         # The Kilo ACP agent server will start successfully even if it is not configured properly 
         return None
-    
-    async def process_message(self, message: Message) -> None:
-        try:
-            await super().process_message(message)
-        except RequestError as e:
-            raise e
 
     async def is_authed(self) -> bool:
         # Be optimistic and assume the user is authenticated. 
